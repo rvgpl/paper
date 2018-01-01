@@ -1,0 +1,130 @@
+@media print {
+
+  @page {
+    margin: 2cm;
+ }
+
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+ }
+
+  body {
+    line-height: 1.4;
+    font-size: 14pt;
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
+  /* Headings */
+  h1 { font-size:19pt; }
+
+  h2 { font-size:17pt; }
+
+  h3 { font-size:15pt; }
+
+  h4,
+  h5,
+  h6 { 
+    font-size:14pt;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+ }
+
+  /* Don't show links that are fragment identifiers */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+ }
+
+ /* Don't show linked images */
+ a[href$=".jpg"]:after,
+ a[href$=".jpeg"]:after,
+ a[href$=".gif"]:after,
+ a[href$=".png"]:after {
+    content: " (" attr(href) ") ";
+    display:none;
+ }
+  
+  pre {
+    white-space: pre-wrap !important;
+    page-break-inside: avoid;
+  }
+
+  code {
+    font-family: Courier, monospace
+  }
+
+  hr {
+    background-color: #ccc;
+  }
+
+  blockquote {
+    margin: 0;
+    border-left: 0.2em solid #000;
+    padding-left: 1em;
+    font-size: 14pt;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Images */
+  img {
+    margin: 1em;
+    width: 100%;
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  figure {
+    margin: 0;
+    page-break-inside: avoid;
+  }
+
+  /* For videos, Youtube etc. */
+  iframe {
+    margin: 1em;
+  }
+
+}
+
+@media print and (color) {
+  * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+ }
+}
